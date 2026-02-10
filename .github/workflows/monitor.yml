@@ -34,6 +34,24 @@ jobs:
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
 
+      - name: Debug site directory
+        run: |
+          echo "=== PWD ==="
+          pwd
+          echo "=== ROOT ==="
+          ls -la
+          echo "=== SITE ==="
+          ls -la site || echo "site missing"
+          echo "=== SITE/IMAGES ==="
+          ls -la site/images || echo "images missing"
+          echo "=== STATUS.JSON (if exists) ==="
+          if [ -f site/status.json ]; then
+            wc -c site/status.json
+            head -n 20 site/status.json
+          else
+            echo "site/status.json missing"
+          fi
+
       - name: Deploy dashboard to GitHub Pages (gh-pages)
         uses: peaceiris/actions-gh-pages@v4
         with:
