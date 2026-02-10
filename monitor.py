@@ -34,6 +34,7 @@ async def capture(page_cfg):
 
         page = await browser.new_page()
 
+        # Human-like User-Agent
         await page.set_extra_http_headers({
             "User-Agent": (
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -47,15 +48,18 @@ async def capture(page_cfg):
             "height": page_cfg["viewport"][1]
         })
 
+        # Safer load than networkidle for ad-heavy sites
         await page.goto(
             page_cfg["url"],
             wait_until="domcontentloaded",
             timeout=60000
         )
 
+        # Optional selector wait
         if page_cfg.get("wait_for"):
             await page.wait_for_selector(page_cfg["wait_for"], timeout=30000)
 
+        # Mask dynamic selectors
         for selector in page_cfg.get("mask", []):
             await page.add_style_tag(content=f"""
                 {selector} {{
@@ -91,6 +95,7 @@ def diff_images(prev_path, curr_path, out_path):
     return score
 
 def discord_alert(name, url, score, diff_path):
+    # attach diff image to Discord
     with open(diff_path, "rb") as f:
         requests.post(
             DISCORD_WEBHOOK,
@@ -105,8 +110,68 @@ def discord_alert(name, url, score, diff_path):
         )
 
 async def main():
+    # Ensure dashboard output dirs exist
     os.makedirs(SITE_DIR, exist_ok=True)
     os.makedirs(IMG_DIR, exist_ok=True)
 
-    with open("pages.yaml") as f:
+    with open("pages.yaml", "r", encoding="utf-8") as f:
         pages = yaml.safe_load(f)["pages"]
+
+    generated_at = iso_now()
+    items = []
+
+    for page_cfg in pages:
+        name = page_cfg["name"]
+        url = page_cfg["url"]
+        threshold = float(page_cfg.get("threshold", DEFAULT_THRESHOLD))
+
+        safe = name.replace(" ", "_").replace("/", "_")
+        prev = os.path.join(IMG_DIR, f"{safe}_latest.png")
+        curr = os.path.join(IMG_DIR, f"{safe}_new.png")
+        diff = os.path.join(IMG_DIR, f"{safe}_diff.png")
+
+        entry = {
+            "name": name,
+            "url": url,
+            "threshold": threshold,
+            "last_checked": generated_at,
+            "last_changed": None,
+            "score": None,
+            "state": "ok",
+            "latest_screenshot": os.path.basename(prev) if os.path.exists(prev) else None,
+            "latest_diff": os.path.basename(diff) if os.path.exists(diff) else None,
+            "error": None,
+        }
+
+        try:
+            screenshot = await capture(page_cfg)
+
+            with open(curr, "wb") as f:
+                f.write(screenshot)
+
+            if os.path.exists(prev):
+                score = diff_images(prev, curr, diff)
+                entry["score"] = float(score)
+
+                if score < threshold:
+                    entry["state"] = "changed"
+                    entry["last_changed"] = generated_at
+                    entry["latest_diff"] = os.path.basename(diff)
+                    discord_alert(name, url, score, diff)
+
+            os.replace(curr, prev)
+            entry["latest_screenshot"] = os.path.basename(prev)
+
+        except Exception as e:
+            entry["state"] = "error"
+            entry["error"] = str(e)
+
+        items.append(entry)
+
+    with open(STATUS_PATH, "w", encoding="utf-8") as f:
+        json.dump({"generated_at": generated_at, "items": items}, f, indent=2)
+
+    print(f"Dashboard data written to {STATUS_PATH}")
+
+if __name__ == "__main__":
+    asyncio.run(main())
