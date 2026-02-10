@@ -15,7 +15,12 @@ async def capture(page_cfg):
             "width": page_cfg["viewport"][0],
             "height": page_cfg["viewport"][1]
         })
-        await page.goto(page_cfg["url"], wait_until="networkidle")
+        await page.goto(
+    page_cfg["url"],
+    wait_until="domcontentloaded",
+    timeout=60000
+)
+
         await page.wait_for_selector(page_cfg["wait_for"])
 
         for selector in page_cfg["mask"]:
