@@ -1,0 +1,6 @@
+pages:
+  - name: Example Page
+    url: https://example.com
+    viewport: [1440, 2000]
+    wait_for: body
+    mask: []
