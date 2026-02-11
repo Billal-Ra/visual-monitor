@@ -1,6 +1,6 @@
 pages:
   - name: Poke ETB
-    url: https://www.pokemoncenter.com/category/elite-trainer-box
+    url: https://www.target.com/p/pok--233-mon-trading-card-game--unova-victini-illustration-collection--no-aasa/-/A-94636866
     viewport: [1440, 2000]
     wait_for: html
     mask: []
