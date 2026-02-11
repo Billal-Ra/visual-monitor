@@ -6,22 +6,25 @@ pages:
     mask:
       - ".ad"
       - "#timestamp"
+    threshold: 0.98
 
   - name: Lucario Price
     url: https://www.pokemoncenter.com/category/elite-trainer-box
     viewport: [1440, 2200]
     wait_for: body
     mask: []
+    threshold: 0.98
 
   - name: Target POK Day
     url: https://www.target.com/p/2025-pok-pokemon-day/-/A-95082138?preselect=95082138
     viewport: [1440, 2000]
     wait_for: "[data-test='product-title']"
     mask: []
-    threshold: 0.99999
+    threshold: 0.98
 
   - name: Victini
     url: https://www.target.com/p/pok--233-mon-trading-card-game--unova-victini-illustration-collection--no-aasa/-/A-94636866
     viewport: [1440, 2200]
     wait_for: body
     mask: []
+    threshold: 0.98
