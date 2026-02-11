@@ -8,7 +8,14 @@ pages:
       - "#timestamp"
 
   - name: Lucario Price
-    url: https://www.target.com/p/pok--233-mon-trading-card-game--mega-evolution-elite-trainer-box--lucario--no-aasa/-/A-94681776
+    url: https://www.pokemoncenter.com/category/elite-trainer-box
     viewport: [1440, 2200]
     wait_for: body
     mask: []
+
+- name: Target POK Day
+    url: https://https://www.target.com/p/2025-pok-pokemon-day/-/A-95082138?preselect=95082138
+    viewport: [1440, 2000]
+    wait_for: "[data-test='product-title']"
+    mask: []
+    threshold: 0.99999
