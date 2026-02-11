@@ -1,27 +1,17 @@
 pages:
-  - name: Lucario ETB
-    url: https://www.target.com/p/pok--233-mon-trading-card-game--mega-evolution-elite-trainer-box--lucario--no-aasa/-/A-94681776
-    viewport: [1440, 2000]
-    wait_for: body
-    mask:
-      - ".ad"
-      - "#timestamp"
-
   - name: Poke ETB
     url: https://www.pokemoncenter.com/category/elite-trainer-box
-    viewport: [1440, 2200]
-    wait_for: body
-    mask: []
-
-- name: Target POK Day
-    url: https://https://www.target.com/p/2025-pok-pokemon-day/-/A-95082138?preselect=95082138
     viewport: [1440, 2000]
-    wait_for: "[data-test='product-title']"
+    wait_for: html
     mask: []
     threshold: 0.99999
 
-- name: Victini 
-    url: https://www.target.com/p/pok--233-mon-trading-card-game--unova-victini-illustration-collection--no-aasa/-/A-94636866
-    viewport: [1440, 2200]
-    wait_for: body
-    mask: []
+  # Add your real pages below like this:
+  # - name: Target Lucario
+  #   url: https://www.target.com/p/...
+  #   viewport: [1440, 2000]
+  #   wait_for: "[data-test='product-title']"
+  #   mask:
+  #     - ".promo"
+  #     - "[data-test='price']"
+  #   threshold: 0.98
