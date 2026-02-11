@@ -113,6 +113,7 @@ async def main():
     # Ensure dashboard output dirs exist
     os.makedirs(SITE_DIR, exist_ok=True)
     os.makedirs(IMG_DIR, exist_ok=True)
+    requests.post(DISCORD_WEBHOOK, json={"content": "✅ Test alert: Discord webhook is working."})
 
     with open("pages.yaml", "r", encoding="utf-8") as f:
         pages = yaml.safe_load(f)["pages"]
