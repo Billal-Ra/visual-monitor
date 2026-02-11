@@ -19,3 +19,9 @@ pages:
     wait_for: "[data-test='product-title']"
     mask: []
     threshold: 0.99999
+
+- name: Victini 
+    url: https://www.target.com/p/pok--233-mon-trading-card-game--unova-victini-illustration-collection--no-aasa/-/A-94636866
+    viewport: [1440, 2200]
+    wait_for: body
+    mask: []
