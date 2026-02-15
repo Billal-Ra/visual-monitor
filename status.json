@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-02-15T02:28:47.792755+00:00",
+  "items": [
+    {
+      "name": "Lucario ETB",
+      "url": "https://www.target.com/p/pok--233-mon-trading-card-game--mega-evolution-elite-trainer-box--lucario--no-aasa/-/A-94681776",
+      "threshold": 0.98,
+      "last_checked": "2026-02-15T02:28:47.792755+00:00",
+      "last_changed": null,
+      "score": null,
+      "state": "ok",
+      "latest_screenshot": "Lucario_ETB_latest.png",
+      "latest_diff": null,
+      "error": null
+    },
+    {
+      "name": "Lucario Price",
+      "url": "https://www.pokemoncenter.com/category/elite-trainer-box",
+      "threshold": 0.98,
+      "last_checked": "2026-02-15T02:28:47.792755+00:00",
+      "last_changed": null,
+      "score": null,
+      "state": "ok",
+      "latest_screenshot": "Lucario_Price_latest.png",
+      "latest_diff": null,
+      "error": null
+    },
+    {
+      "name": "Target POK Day",
+      "url": "https://www.target.com/p/2025-pok-pokemon-day/-/A-95082138?preselect=95082138",
+      "threshold": 0.98,
+      "last_checked": "2026-02-15T02:28:47.792755+00:00",
+      "last_changed": null,
+      "score": null,
+      "state": "ok",
+      "latest_screenshot": "Target_POK_Day_latest.png",
+      "latest_diff": null,
+      "error": null
+    },
+    {
+      "name": "Victini",
+      "url": "https://www.target.com/p/pok--233-mon-trading-card-game--unova-victini-illustration-collection--no-aasa/-/A-94636866",
+      "threshold": 0.98,
+      "last_checked": "2026-02-15T02:28:47.792755+00:00",
+      "last_changed": null,
+      "score": null,
+      "state": "ok",
+      "latest_screenshot": "Victini_latest.png",
+      "latest_diff": null,
+      "error": null
+    }
+  ]
+}
