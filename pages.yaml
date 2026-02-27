@@ -9,7 +9,7 @@ pages:
     threshold: 0.98
 
   - name: Lucario Price
-    url: https://www.pokemoncenter.com/category/elite-trainer-box
+    url: https://www.walmart.com/ip/Pok-mon-Trading-Card-Game-Mega-Evolution-Ascended-Heroes-Elite-Trainer-Box/18710966734?conditionGroupCode=4&athcpid=18710966734&athpgid=AthenaContentPage_3580439&athcgid=null&athznid=ItemCarousel_f701cc6c-8158-41e4-ba69-acfab3675ed6_items&athieid=v0&athstid=CS020&athguid=BKymhY9whkm_83_IGEHXUQTv3WiYGEXIVNoJ&athancid=null&athena=true
     viewport: [1440, 2200]
     wait_for: body
     mask: []
