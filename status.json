@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-09-07T04:52:44.057935+00:00",
+  "items": [
+    {
+      "name": "Lucario ETB",
+      "url": "https://www.target.com/p/pok--233-mon-trading-card-game--mega-evolution-elite-trainer-box--lucario--no-aasa/-/A-94681776",
+      "threshold": 0.98,
+      "last_checked": "2026-09-07T04:52:44.057935+00:00",
+      "last_changed": null,
+      "score": null,
+      "state": "ok",
+      "latest_screenshot": "Lucario_ETB_latest.png",
+      "latest_diff": null,
+      "error": null
+    },
+    {
+      "name": "Lucario Price",
+      "url": "https://www.walmart.com/ip/Pok-mon-Trading-Card-Game-Mega-Evolution-Ascended-Heroes-Elite-Trainer-Box/18710966734?conditionGroupCode=4&athcpid=18710966734&athpgid=AthenaContentPage_3580439&athcgid=null&athznid=ItemCarousel_f701cc6c-8158-41e4-ba69-acfab3675ed6_items&athieid=v0&athstid=CS020&athguid=BKymhY9whkm_83_IGEHXUQTv3WiYGEXIVNoJ&athancid=null&athena=true",
+      "threshold": 0.98,
+      "last_checked": "2026-09-07T04:52:44.057935+00:00",
+      "last_changed": null,
+      "score": null,
+      "state": "ok",
+      "latest_screenshot": "Lucario_Price_latest.png",
+      "latest_diff": null,
+      "error": null
+    },
+    {
+      "name": "Target POK Day",
+      "url": "https://www.target.com/p/2025-pok-pokemon-day/-/A-95082138?preselect=95082138",
+      "threshold": 0.98,
+      "last_checked": "2026-09-07T04:52:44.057935+00:00",
+      "last_changed": null,
+      "score": null,
+      "state": "ok",
+      "latest_screenshot": "Target_POK_Day_latest.png",
+      "latest_diff": null,
+      "error": null
+    },
+    {
+      "name": "Victini",
+      "url": "https://www.target.com/p/pok--233-mon-trading-card-game--unova-victini-illustration-collection--no-aasa/-/A-94636866",
+      "threshold": 0.98,
+      "last_checked": "2026-09-07T04:52:44.057935+00:00",
+      "last_changed": null,
+      "score": null,
+      "state": "ok",
+      "latest_screenshot": "Victini_latest.png",
+      "latest_diff": null,
+      "error": null
+    }
+  ]
+}
